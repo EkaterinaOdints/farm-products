@@ -31,7 +31,7 @@ const ProductCard = (props) => {
   return (
     <div className={styles.root}>
       <div className={styles.image}>
-        <img src={`../../../${product.imgPath}`} alt={product.title} width="248" height="248" />
+        <img src={product.imgPath} alt={product.title} width="248" height="248" />
       </div>
       <div className={styles.text}>
         <Title tag="h3">{product.title}</Title>
