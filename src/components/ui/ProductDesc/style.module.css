@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.description p {
+  margin: 0;
+}
+
+.price {
+  padding: 4px 8px;
+  align-self: flex-start;
+  background-color: #D8ECFE;
+  font-weight: 700;
+}

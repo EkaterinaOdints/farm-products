@@ -1,0 +1,73 @@
+.root {
+  padding: 15px 0;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    padding: 6px 0;
+  }
+}
+
+.text {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+    justify-content: flex-start;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+.text::after {
+  content: "";
+  flex-shrink: 0;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: #F6F6F6;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    width: 15px;
+    height: 15px;
+    order: -1;
+  }
+}
+
+.text::before {
+  content: none;
+  position: absolute;
+  right: 4px;
+  top: 3px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/src/assets/img/form/check.svg");
+  background-repeat: no-repeat;
+  background-position: bottom 0 right 50%;
+
+  @media (max-width: 768px) {
+    width: 8px;
+    height: 8px;
+    left: 4px;
+  }
+}
+
+.input {
+  display: none;
+}
+
+.input:checked ~ .text::after {
+  background-color: #FC9B27;
+}
+
+.input:checked ~ .text::before {
+  content: "";
+}
+
+.root.isDisabled .text {
+  opacity: 0.5;
+}

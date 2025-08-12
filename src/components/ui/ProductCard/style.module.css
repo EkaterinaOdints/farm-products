@@ -1,0 +1,76 @@
+.root {
+  display: flex;
+  gap: 20px;
+  background-color: #FFFFFF;
+  font-size: 14px;
+  line-height: 21px;
+  padding: 20px;
+  box-shadow: 
+    0 10px 20px 0 rgba(0, 0, 0, 0.04),
+    0 2px 6px 0 rgba(0, 0, 0, 0.04),
+    0 0 1px 0 rgba(0, 0, 0, 0.04);
+
+  @media (max-width: 1279px) {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    font-size: 12px;
+    line-height: 19px;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 419px;
+
+  @media (max-width: 1279px) {
+    width: auto;
+  }
+
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
+}
+
+.image {
+  flex-shrink: 0;
+  width: 248px;
+  height: 248px; 
+
+  @media (max-width: 1279px) {
+    align-self: center;
+    width: 100%;
+  }
+}
+
+.image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.tabButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  @media (max-width: 768px) {
+    gap: 3px;
+  }
+}
+
+.buttonTabIsActive {
+  color: #FFFFFF;
+  background-color: #88AA4D;
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}

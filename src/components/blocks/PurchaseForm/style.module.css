@@ -1,0 +1,63 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 353px;
+  flex-shrink: 0;
+
+  @media (max-width: 1024px) {
+    width: auto;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.productList {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(174px, 1fr));
+    grid-auto-flow: row dense;
+    column-gap: 20px;
+  }
+}
+
+.addressInput {
+  margin-top: 12px;
+}
+
+.priceWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 20px 0 32px;
+
+  @media (max-width: 1024px) {
+    margin: 15px 0;
+  }
+}
+
+.priceText {
+  font-size: 14px;
+  line-height: 17px;
+
+  @media (max-width: 1024px) {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+.priceNumber {
+  font-size: 24px;
+  line-height: 31px;
+  font-weight: 700;
+
+  @media (max-width: 1024px) {
+    font-size: 22px;
+    line-height: 29px;
+  }
+}

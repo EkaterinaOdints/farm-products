@@ -1,0 +1,26 @@
+.root {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-shrink: 0;
+  padding: 10px 0;
+  background-color: #FFFFFF;
+  z-index: 5;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.04);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+}

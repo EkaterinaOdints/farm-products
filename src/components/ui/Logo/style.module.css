@@ -1,0 +1,15 @@
+.root {
+  width: 398px;
+  height: 44px;
+  flex-shrink: 0;
+
+  @media (max-width: 1024px) {
+    width: 226px;
+    height: 25px;
+  }
+
+  @media (max-width: 768px) {
+    width: 44px;
+    height: 44px;
+  }
+}
