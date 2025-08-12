@@ -1,9 +1,15 @@
+import chickenThighFillet from '../assets/img/products/chicken-thigh-fillet.jpg';
+import gooseThighFillet from '../assets/img/products/goose-thigh-fillet.jpg';
+import beefThighPulp from '../assets/img/products/beef-thigh-pulp.jpg';
+import chickenBreastWithBone from '../assets/img/products/chicken-breast-with-bone.jpg';
+import chickenDrumstick from '../assets/img/products/chicken-drumstick.jpg';
+
 const products = [
   {
     isChecked: true,
     id: "chicken-thigh-fillet",
     title: "Филе бедра цыпленка",
-    imgPath: "src/assets/img/products/chicken-thigh-fillet.jpg",
+    imgPath: chickenThighFillet,
     description: {
       text: "Филе бедра без кожи и&nbsp;кости. Птица содержится в&nbsp;свободных&nbsp;птичниках, выращивается на&nbsp;натуральных зерновых кормах, что влияет положительно на&nbsp;вкус мяса. Филейная часть бедра обладает насыщенным вкусом и&nbsp;мясным ароматом. ",
       weight: "700 гр.",
@@ -53,7 +59,7 @@ const products = [
     isChecked: true,
     id: "goose-thigh-fillet",
     title: "Филе бедра гуся",
-    imgPath: "src/assets/img/products/goose-thigh-fillet.jpg",
+    imgPath: gooseThighFillet,
     description: {
       text: "Филе бедра гуся - это тонко нарезанный продукт, который понравится всем любителям сырокопченых продуктов. Необычный вкус, аппетитный аромат и тонкое послевкусия отличает сырокопченого гуся от других подобных продуктов.",
       weight: "700 гр.",
@@ -103,7 +109,7 @@ const products = [
     isChecked: true,
     id: "beef-thigh-pulp",
     title: "Мякоть бедра говяжья",
-    imgPath: "src/assets/img/products/beef-thigh-pulp.jpg",
+    imgPath: beefThighPulp,
     description: {
       text: "Мякоть бедра говяжья - это тонко нарезанный продукт, который понравится всем любителям сырокопченых продуктов. Необычный вкус, аппетитный аромат и тонкое послевкусия отличает сырокопченого гуся от других подобных продуктов.",
       weight: "700 гр.",
@@ -153,7 +159,7 @@ const products = [
     isChecked: false,
     id: "chicken-breast-with-bone",
     title: "Грудка цыпленка на кости",
-    imgPath: "src/assets/img/products/chicken-breast-with-bone.jpg",
+    imgPath: chickenBreastWithBone,
     description: {
       text: "Грудка цыпленка на кости - это тонко нарезанный продукт, который понравится всем любителям сырокопченых продуктов. Необычный вкус, аппетитный аромат и тонкое послевкусия отличает сырокопченого гуся от других подобных продуктов.",
       weight: "700 гр.",
@@ -203,7 +209,7 @@ const products = [
     isChecked: false,
     id: "chicken-drumstick",
     title: "Голень цыпленка",
-    imgPath: "src/assets/img/products/chicken-drumstick.jpg",
+    imgPath: chickenDrumstick,
     description: {
       text: "Голень цыпленка - это тонко нарезанный продукт, который понравится всем любителям сырокопченых продуктов. Необычный вкус, аппетитный аромат и тонкое послевкусия отличает сырокопченого гуся от других подобных продуктов.",
       weight: "700 гр.",
