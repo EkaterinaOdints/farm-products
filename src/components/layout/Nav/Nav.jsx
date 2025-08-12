@@ -8,7 +8,7 @@ const Nav = (props) => {
   const navigation = () => {
     switch(pageType) {
       case "index":
-        return <Button tag="a" href="/catalog" theme="buttonDefault">Купить</Button>
+        return <Button tag="a" href="/farm-products/catalog" theme="buttonDefault">Купить</Button>
       case "inner":
         return (
           <ul className={styles.list}>

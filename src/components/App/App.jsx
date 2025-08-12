@@ -16,7 +16,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route 
-          path="/" 
+          path="/farm-products/" 
           element={
             <PageWrapper pageType="index">
               <IndexPage features={features} />
@@ -24,7 +24,7 @@ const App = () => {
           }
         />
         <Route 
-          path="/catalog" 
+          path="/farm-products/catalog" 
           element={
             <PageWrapper pageType="inner">
               <CatalogPage products={products} />

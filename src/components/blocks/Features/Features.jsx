@@ -18,7 +18,7 @@ const Features = ({features}) => {
         <div className={styles.wrapper}>
           <Title tag="h2" className={styles.title}>Почему фермерские продукты лучше?</Title>
           <div className={styles.list}>{featuresList}</div>
-          <Button tag="a" href="/catalog" theme="buttonDefault">Купить</Button>
+          <Button tag="a" href="/farm-products/catalog" theme="buttonDefault">Купить</Button>
         </div>
       </Container>
     </section>
