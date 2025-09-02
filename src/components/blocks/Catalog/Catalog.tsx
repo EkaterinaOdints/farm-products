@@ -1,14 +1,20 @@
 import styles from './style.module.css';
 import {useState, useRef, useEffect} from 'react';
-import Container from '../../layout/Container/Container';
-import Title from '../../ui/Title/Title';
-import PurchaseForm from '../PurchaseForm/PurchaseForm.jsx';
-import ProductCard from '../../ui/ProductCard/ProductCard.jsx';
+import type { Product } from '../../../types.ts';
 
-const Catalog = (props) => {
+import Container from '../../layout/Container/Container.js';
+import Title from '../../ui/Title/Title.js';
+import PurchaseForm from '../PurchaseForm/PurchaseForm.js';
+import ProductCard from '../../ui/ProductCard/ProductCard.js';
+
+interface Props {
+  products: Product[],
+}
+
+const Catalog = (props: Props) => {
   const {products} = props;
 
-  let selectedDefault = [];
+  let selectedDefault: string[] = [];
 
   products.forEach((item) => {
     if (item.isChecked) {
@@ -19,7 +25,7 @@ const Catalog = (props) => {
   const [selectedProducts, setSelectedProducts] = useState(selectedDefault);
   const [isProductAdded, setIsProductAdded] = useState(false);
 
-  const cardRef = useRef();
+  const cardRef = useRef<HTMLLIElement | null>(null);
 
   useEffect(() => {
     if (isProductAdded) {
@@ -37,9 +43,19 @@ const Catalog = (props) => {
     return selectedProducts.map((item, index) => {
       const selectedProduct = products.find((product) => product.id === item)
 
+      if (!selectedProduct) {
+        return
+      }
+
       return (
-        <li key={selectedProduct.id} ref={el => index === selectedProducts.length - 1 && (cardRef.current = el)}>
-          <ProductCard product={selectedProduct} />
+        <li 
+          key={selectedProduct.id} 
+          ref={(el) => {
+            if (index === selectedProducts.length - 1) {
+              cardRef.current = el
+            }
+          }}>
+            <ProductCard product={selectedProduct} />
         </li>
       )
     })
@@ -48,7 +64,7 @@ const Catalog = (props) => {
   return (
     <section className={styles.root}>
       <Container>
-        <Title className="visually-hidden">Каталог</Title>
+        <Title className="visually-hidden" tag="h1">Каталог</Title>
         <div className={styles.wrapper}>
           <PurchaseForm
             products={products}

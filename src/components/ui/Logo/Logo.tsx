@@ -1,7 +1,7 @@
 import styles from "./style.module.css";
 import logoDesktop from '../../../assets/img/logo-desktop.svg';
 import logoMobile from '../../../assets/img/logo-mobile.svg';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Logo = () => {
   return (

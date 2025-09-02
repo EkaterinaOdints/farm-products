@@ -1,6 +1,7 @@
 import styles from './style.module.css';
-import Container from '../Container/Container.jsx'
-import Logo from "../../ui/Logo/Logo.jsx"
+
+import Container from '../Container/Container.js'
+import Logo from "../../ui/Logo/Logo.js"
 
 const Footer = () => {
   return (

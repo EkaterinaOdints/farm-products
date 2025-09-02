@@ -1,11 +1,17 @@
 import styles from './style.module.css';
-import {useState} from 'react';
-import Title from '../Title/Title.jsx';
-import Button from '../Button/Button.jsx';
-import ProductDesc from '../ProductDesc/ProductDesc.jsx';
-import ProductFeaturesList from '../ProductFeaturesList/ProductFeaturesList.jsx';
+import { useState } from 'react';
+import type { Product } from '../../../types.ts';
 
-const ProductCard = (props) => {
+import Title from '../Title/Title.js';
+import Button from '../Button/Button.js';
+import ProductDesc from '../ProductDesc/ProductDesc.js';
+import ProductFeaturesList from '../ProductFeaturesList/ProductFeaturesList.js';
+
+interface Props {
+  product: Product,
+}
+
+const ProductCard = (props: Props) => {
   const {product} = props;
 
   const tabs = [
@@ -26,6 +32,10 @@ const ProductCard = (props) => {
     },
   ]
 
+  if (!tabs[0]) {
+    return
+  }
+
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   return (
@@ -45,7 +55,7 @@ const ProductCard = (props) => {
                 id={tab.id}
                 theme="buttonTab"
                 onChange={setActiveTab}
-                className={activeTab === tab.id ? styles.buttonTabIsActive : null}
+                className={activeTab === tab.id ? styles.buttonTabIsActive : undefined}
               >
                 {tab.title}
               </Button>
@@ -53,7 +63,7 @@ const ProductCard = (props) => {
           })}
         </div>
         <>
-          {tabs.map((tab) => {
+          {tabs.forEach((tab) => {
             if (tab.id === activeTab) {
               return <div key={tab.id} className={styles.tabContent}>{tab.content}</div>
             }

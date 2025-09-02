@@ -1,11 +1,17 @@
 import styles from './style.module.css';
 import classNames from "classnames";
-import Header from '../Header/Header.jsx';
-import Footer from '../Footer/Footer.jsx';
-import { useEffect } from "react";
+import { type ReactNode, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const PageWrapper = (props) => {
+import Header from '../Header/Header.js';
+import Footer from '../Footer/Footer.js';
+
+interface Props {
+  children: ReactNode,
+  pageType: string,
+}
+
+const PageWrapper = (props: Props) => {
   const {children, pageType} = props;
 
   const {pathname} = useLocation();

@@ -1,6 +1,7 @@
 import styles from "./style.module.css";
-import Container from '../../layout/Container/Container.jsx'
-import Title from '../../ui/Title/Title.jsx'
+
+import Container from '../../layout/Container/Container.js'
+import Title from '../../ui/Title/Title.js'
 
 const About = () => {
   return (

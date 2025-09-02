@@ -1,11 +1,20 @@
 import styles from "./style.module.css";
-import Container from '../../layout/Container/Container.jsx';
-import Title from '../../ui/Title/Title.jsx';
-import FeatureCard from '../../ui/FeatureCard/FeatureCard.jsx';
-import Button from '../../ui/Button/Button.jsx';
+import type { Feature } from '../../../types.ts';
 
-const Features = ({features}) => {
+import Container from '../../layout/Container/Container.js';
+import Title from '../../ui/Title/Title.js';
+import FeatureCard from '../../ui/FeatureCard/FeatureCard.js';
+import Button from '../../ui/Button/Button.js';
+
+interface Props {
+  features: Feature[]
+}
+
+const Features = (props: Props) => {
+  const {features} = props;
+
   let featuresList;
+
   if (Array.isArray(features)) {
     featuresList = features.map((feature) => {
       return <FeatureCard key={feature.id} feature={feature} />

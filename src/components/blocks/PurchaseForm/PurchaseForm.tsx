@@ -1,17 +1,31 @@
 import styles from './style.module.css';
-import {useState} from 'react';
-import FormIsland from '../../ui/FormIsland/FormIsland.jsx';
-import Button from '../../ui/Button/Button.jsx';
-import Checkbox from '../../ui/Checkbox/Checkbox.jsx';
-import TextInput from '../../ui/TextInput/TextInput.jsx';
+import { useState } from 'react';
+import type { Product } from '../../../types.ts';
 
-const PurchaseForm = (props) => {
+import FormIsland from '../../ui/FormIsland/FormIsland.js';
+import Button from '../../ui/Button/Button.js';
+import Checkbox from '../../ui/Checkbox/Checkbox.js';
+import TextInput from '../../ui/TextInput/TextInput.js';
+
+interface Props {
+  products: Product[],
+  selectedProducts: string[],
+  onProductsChange: React.Dispatch<React.SetStateAction<string[]>>,
+  setIsProductAdded: React.Dispatch<React.SetStateAction<boolean>>,
+}
+
+const PurchaseForm = (props: Props) => {
   const {products, selectedProducts, onProductsChange, setIsProductAdded} = props;
 
   let defaultPrice = 0;
 
   selectedProducts.forEach((item) => {
     const product = products.find((product) => product.id === item);
+
+    if (!product) {
+      return
+    }
+
     defaultPrice += product.description.priceNumber;
   })
 
@@ -19,8 +33,12 @@ const PurchaseForm = (props) => {
 
   let selectedCheckboxes = [...selectedProducts];
 
-  const onCheckboxChange = (productId) => {
+  const onCheckboxChange = (productId: string) => {
     const product = products.find((product) => product.id === productId);
+
+    if (!product) {
+      return
+    }
 
     if (selectedCheckboxes.includes(productId)) {
       selectedCheckboxes = selectedCheckboxes.filter((item) => item !== productId);
@@ -47,6 +65,7 @@ const PurchaseForm = (props) => {
                 key={product.id}
                 onChange={onCheckboxChange}
                 isChecked={selectedCheckboxes.includes(product.id)}
+                isDisabled={false}
               />
             )
           })}
@@ -58,7 +77,7 @@ const PurchaseForm = (props) => {
           <span className={styles.priceText}>Цена</span>
           <div className={styles.priceNumber}>{`${price} руб.`}</div>
         </div>
-        <Button tag="button" type="submit" theme="buttonDefault" isDisabled={!selectedCheckboxes.length > 0}>Купить</Button>
+        <Button tag="button" type="submit" theme="buttonDefault" isDisabled={selectedCheckboxes.length === 0}>Купить</Button>
       </FormIsland>
     </form>
   )

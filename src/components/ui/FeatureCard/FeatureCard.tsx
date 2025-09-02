@@ -1,7 +1,14 @@
 import styles from "./style.module.css";
 import classNames from "classnames";
+import type { Feature } from "../../../types.ts";
 
-const FeatureCard = ({feature}) => {
+interface Props {
+  feature: Feature,
+}
+
+const FeatureCard = (props: Props) => {
+  const {feature} = props;
+
   const {title, description, cardId, tag} = feature;
   const isNatural = tag === "natural";
 

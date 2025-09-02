@@ -1,7 +1,16 @@
 import styles from "./style.module.css";
 import classNames from "classnames";
+import type { ReactNode } from "react";
 
-const Title = (props) => {
+type TitleTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+
+interface Props {
+  children: ReactNode,
+  tag: TitleTag,
+  className?: string | undefined,
+}
+
+const Title = (props: Props) => {
   const {children, tag = 'div', className} = props;
   
   const TagName = tag;

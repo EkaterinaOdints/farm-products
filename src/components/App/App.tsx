@@ -1,14 +1,15 @@
 import "./style.css";
-import PageWrapper from '../layout/PageWrapper/PageWrapper.jsx';
-import IndexPage from '../layout/IndexPage/IndexPage.jsx';
-import CatalogPage from '../layout/CatalogPage/CatalogPage.jsx';
-import features from '../../mocks/features.jsx';
-import products from '../../mocks/products.jsx';
 import {
   BrowserRouter,
   Routes,
   Route
 } from 'react-router-dom';
+
+import PageWrapper from '../layout/PageWrapper/PageWrapper.js';
+import IndexPage from '../layout/IndexPage/IndexPage.js';
+import CatalogPage from '../layout/CatalogPage/CatalogPage.js';
+import features from '../../mocks/features.js';
+import products from '../../mocks/products.js';
 
 const App = () => {
 

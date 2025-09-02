@@ -1,7 +1,15 @@
 import styles from './style.module.css';
 import classNames from "classnames";
 
-const Checkbox = (props) => {
+interface Props {
+  name: string,
+  title: string,
+  onChange: (name: string) => void,
+  isChecked: boolean,
+  isDisabled: boolean,
+}
+
+const Checkbox = (props: Props) => {
   const {name, title, onChange, isChecked, isDisabled} = props;
   
   return (

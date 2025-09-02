@@ -1,7 +1,13 @@
 import styles from './style.module.css';
 import classNames from "classnames";
 
-const TextInput = (props) => {
+interface Props {
+  name: string,
+  placeholder: string,
+  className?: string | undefined,
+}
+
+const TextInput = (props: Props) => {
   const {name, placeholder, className} = props;
 
   return (

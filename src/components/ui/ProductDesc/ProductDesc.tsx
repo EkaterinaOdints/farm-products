@@ -1,6 +1,14 @@
 import styles from './style.module.css';
 
-const ProductDesc = (props) => {
+interface Props {
+  desc: {
+    text: string,
+    weight: string,
+    priceNumber: number,
+  }
+}
+
+const ProductDesc = (props: Props) => {
   const {desc} = props;
 
   return (

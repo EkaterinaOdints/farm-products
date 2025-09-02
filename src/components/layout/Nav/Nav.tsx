@@ -1,8 +1,13 @@
 import styles from "./style.module.css";
-import Button from '../../ui/Button/Button.jsx'
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Nav = (props) => {
+import Button from '../../ui/Button/Button.js'
+
+interface Props {
+  pageType: string
+}
+
+const Nav = (props: Props) => {
   const {pageType} = props;
 
   const navigation = () => {

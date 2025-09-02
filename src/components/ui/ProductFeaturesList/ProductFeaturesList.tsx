@@ -1,6 +1,11 @@
 import styles from './style.module.css';
+import type { ProductBase } from '../../../types.ts';
 
-const ProductFeaturesList = (props) => {
+interface Props {
+  list: ProductBase[]
+}
+
+const ProductFeaturesList = (props: Props) => {
   const {list} = props;
 
   return (
