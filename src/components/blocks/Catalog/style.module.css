@@ -29,17 +29,8 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
-
-  @media (max-width: 768px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
 }
 
 .productItem {
-  min-width: 280px;
-  
-  @media (max-width: 768px) {
-    width: calc(50% - 6px);
-  }
+  width: 100%;
 }
