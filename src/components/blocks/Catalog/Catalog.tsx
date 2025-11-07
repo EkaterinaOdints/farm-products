@@ -48,7 +48,8 @@ const Catalog = (props: Props) => {
       }
 
       return (
-        <li 
+        <li
+          className={styles.productItem} 
           key={selectedProduct.id} 
           ref={(el) => {
             if (index === selectedProducts.length - 1) {

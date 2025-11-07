@@ -17,7 +17,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route 
-          path="/farm-products/" 
+          path="/" 
           element={
             <PageWrapper pageType="index">
               <IndexPage features={features} />

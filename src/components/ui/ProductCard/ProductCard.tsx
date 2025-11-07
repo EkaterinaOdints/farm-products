@@ -63,7 +63,7 @@ const ProductCard = (props: Props) => {
           })}
         </div>
         <>
-          {tabs.forEach((tab) => {
+          {tabs.map((tab) => {
             if (tab.id === activeTab) {
               return <div key={tab.id} className={styles.tabContent}>{tab.content}</div>
             }
