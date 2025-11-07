@@ -52,18 +52,24 @@
   background-position: center;
   background-repeat: no-repeat;
   grid-row: 1 / 3;
+}
 
-  @media (max-width: 1024px) {
+@media (max-width: 1024px) {
+  .tagsWrapper::before {
     width: 48px;
     height: 48px;
   }
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .tagsWrapper::before {
     width: 56px;
     height: 56px;
   }
+}
 
-  @media (max-width: 375px) {
+@media (max-width: 375px) {
+  .tagsWrapper::before {
     width: 48px;
     height: 48px;
   }
